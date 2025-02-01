@@ -1,15 +1,12 @@
-
-
+import Navbar from "./Component/Navbar";
 
 function App() {
-  
-
   return (
-    <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+    <div className="w-full">
+      <Navbar />
       
-  )
+    </div>
+  );
 }
 
-export default App
+export default App;
