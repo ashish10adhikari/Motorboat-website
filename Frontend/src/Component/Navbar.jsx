@@ -1,7 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faTiktok } from "@fortawesome/free-brands-svg-icons";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const Navbar = () => {
@@ -27,47 +26,47 @@ const Navbar = () => {
           
         </div>
       </div>
-      <div className=" w-full bg-slate-800 text-white text-center py-2">
+      <div className=" w-full bg-slate-800 text-white text-center py-2 bg-cover">
         <ul className="flex justify-center gap-5 h-14 items-center">
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             HOME
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             PACKAGE
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             OUR BOATS
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             GALLERY
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             ABOUT US
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold py-5 px-6 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
           >
             CONTACT US
           </a>
