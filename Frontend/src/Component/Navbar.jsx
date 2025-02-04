@@ -10,7 +10,7 @@ const Navbar = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 col-span-3 md:flex-wrap">
           <div className="col-span-2 flex justify-center md:justify-end items-center md:py-5 md:pr-2">
             <img src={logo} alt="Logo" className="md:w-44 md:h-20 w-20 h-10" />
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold font-primary text-slate-800 whitespace-nowrap">
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold font-primary text-slate-800">
               Aayushma Motorboat
             </h1>
           </div>
@@ -19,9 +19,9 @@ const Navbar = () => {
           </h2>
         </div>
         <div className="grid col-span-1">
-          <div className="flex justify-center items-center gap-1 py-2 text-lg">
+          <div className="flex justify-center items-center gap-1 py-2 md:text-lg">
             <FontAwesomeIcon icon={faPhone} className="text-gray-500"/>
-          <span className="text-sky-600"><span className="pr-2 font-semibold">Phone:</span>+977 9800000000</span>
+          <span className="text-sky-600"><span className="pr-2 md:font-semibold">Phone:</span>+977 9800000000</span>
           </div>
           
         </div>

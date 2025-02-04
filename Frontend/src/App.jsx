@@ -1,5 +1,6 @@
 import Header from "./Component/Header";
 import Navbar from "./Component/Navbar";
+import Package from "./Component/Package";
 import WhyChooseUs from "./Component/WhyChooseUs";
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Header />
       <WhyChooseUs />
+      <Package />
     </div>
   );
 }
