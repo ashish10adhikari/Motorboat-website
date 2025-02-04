@@ -20,9 +20,9 @@ const Navbar = () => {
           </h2>
         </div>
         <div className="grid col-span-1">
-          <div className="flex justify-center items-center gap-1 py-2">
-            <FontAwesomeIcon icon={faPhone} className="text-gray-600"/>
-          <span className="text-gray-600 text-sm font-medium"><strong className="pr-2">Phone:</strong>+977 9800000000</span>
+          <div className="flex justify-center items-center gap-1 py-2 text-lg">
+            <FontAwesomeIcon icon={faPhone} className="text-gray-500"/>
+          <span className="text-sky-600"><span className="pr-2 font-semibold">Phone:</span>+977 9800000000</span>
           </div>
           
         </div>
