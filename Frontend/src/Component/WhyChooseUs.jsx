@@ -11,7 +11,7 @@ import experience from "../assets/experience.jpg";
 
 const WhyChooseUs = () => {
   return (
-    <div className="bg-gray-100 py-16 px-5">
+    <div className=" py-16 px-5">
       <div className="text-center mb-12">
         <h4 className="text-lg text-blue-600 font-semibold uppercase">
           Why Choose Us
