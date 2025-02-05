@@ -30,7 +30,7 @@ const Showcase = () => {
         <li>
           <FontAwesomeIcon icon={faTag} /> Group Discounts
         </li>
-        <a href="#" className="bg-cyan-700 p-3 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-300">Contact us</a>
+        <a href="#" className="bg-cyan-700 p-3 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500">Contact us</a>
       </ul>
     </div>
   );
