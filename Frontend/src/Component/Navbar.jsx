@@ -26,7 +26,7 @@ const Navbar = () => {
           
         </div>
       </div>
-      <div className=" w-full bg-slate-800 text-white text-center py-2 bg-cover">
+      <div className=" w-full bg-slate-800 text-white text-center py-2">
         <ul className="flex justify-center gap-5 h-14 items-center">
           <span className="border-1 h-6"></span>
           <a
