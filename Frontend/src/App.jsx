@@ -11,8 +11,9 @@ function App() {
       <Navbar />
       <Header />
       <Showcase />
-      <Highlight />
       <WhyChooseUs />
+      <Highlight />
+      
       <Package />
     </div>
   );

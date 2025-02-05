@@ -31,42 +31,42 @@ const Navbar = () => {
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             HOME
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             PACKAGE
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             OUR BOATS
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             GALLERY
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             ABOUT US
           </a>
           <span className="border-1 h-6"></span>
           <a
             href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-300"
+            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
           >
             CONTACT US
           </a>
