@@ -5,6 +5,7 @@ import WhyChooseUs from "./Component/WhyChooseUs";
 import Highlight from "./Component/Highlight";
 import Showcase from "./Component/Showcase";
 import Footer from "./Component/Footer";
+import Iframe from "./Component/Iframe";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Package />
       <WhyChooseUs />
       <Highlight />
+      <Iframe/>
       <Footer/>
       
     </div>
