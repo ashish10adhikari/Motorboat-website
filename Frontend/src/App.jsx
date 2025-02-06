@@ -4,6 +4,7 @@ import Package from "./Component/Package";
 import WhyChooseUs from "./Component/WhyChooseUs";
 import Highlight from "./Component/Highlight";
 import Showcase from "./Component/Showcase";
+import Footer from "./Component/Footer";
 
 function App() {
   return (
@@ -14,7 +15,7 @@ function App() {
       <Package />
       <WhyChooseUs />
       <Highlight />
-      
+      <Footer/>
       
     </div>
   );
