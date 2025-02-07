@@ -7,6 +7,7 @@ import Showcase from "./Component/Showcase";
 import Footer from "./Component/Footer";
 import Iframe from "./Component/Iframe";
 import Testimonial from "./Component/Testimonial";
+import Ourteam from "./Component/Ourteam";
 
 function App() {
   return (
@@ -17,6 +18,9 @@ function App() {
       <Package />
       <WhyChooseUs />
       <Highlight />
+      <Ourteam/>
+      
+      
       <Testimonial/>
       <Iframe/>
       <Footer/>
