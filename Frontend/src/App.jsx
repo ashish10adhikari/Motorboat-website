@@ -8,6 +8,7 @@ import Footer from "./Component/Footer";
 import Iframe from "./Component/Iframe";
 import Testimonial from "./Component/Testimonial";
 import Ourteam from "./Component/Ourteam";
+import Contact from "./Component/Contact";
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
       <WhyChooseUs />
       <Highlight />
       <Ourteam/>
-      
+      <Contact/>
       
       <Testimonial/>
       <Iframe/>
