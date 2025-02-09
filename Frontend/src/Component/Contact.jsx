@@ -18,19 +18,19 @@ const Contact = () => {
           <h1 className="font-secondary font-bold text-3xl text-left">
             Aayushma Motorboat Company Pvt Ltd.
           </h1>
-          <p className="flex items-center">
-            <FontAwesomeIcon icon={faEnvelope} className="mr-2" />
+          <p className="flex items-center pl-5">
+            <FontAwesomeIcon icon={faEnvelope} className="mr-2 text-cyan-700" />
             aayushmamotorboat123@gmail.com
           </p>
-          <p className="flex items-center">
-            <FontAwesomeIcon icon={faLocationDot} className="mr-2" /> Bharatpur,
+          <p className="flex items-center pl-5">
+            <FontAwesomeIcon icon={faLocationDot} className="mr-2 text-cyan-700" /> Bharatpur,
             Narayani River, Gate-1
           </p>
-          <p className="flex items-center">
-            <FontAwesomeIcon icon={faPhone} className="mr-2" /> +977 0123456789
+          <p className="flex items-center pl-5">
+            <FontAwesomeIcon icon={faPhone} className="mr-2 text-cyan-700" /> +977 0123456789
           </p>
-          <p className="flex items-center">
-            <FontAwesomeIcon icon={faFacebook} className="mr-2" /> Aayushma
+          <p className="flex items-center pl-5">
+            <FontAwesomeIcon icon={faFacebook} className="mr-2 text-cyan-700" /> Aayushma
             Motorboat
           </p>
           <h2 className="font-bold mt-4 text-2xl font-secondary">Operating Hours</h2>
@@ -41,7 +41,7 @@ const Contact = () => {
           <h3 className="p-5 font-bold uppercase text-xl">Reach Us Out</h3>
           <form
             action=""
-            className="bg-sky-100 p-10 rounded-xl gap-5 flex flex-col"
+            className="bg-sky-100 p-10 rounded-xl gap-5 flex flex-col border-2 border-white shadow-sm shadow-cyan-100"
           >
             <div className="gap-4 flex">
               <input
