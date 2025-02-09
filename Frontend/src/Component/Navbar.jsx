@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -17,47 +18,41 @@ const Navbar = () => {
       <div className=" w-full bg-slate-800 text-white text-center py-2">
         <ul className="flex justify-center gap-5 h-14 items-center">
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            HOME
-          </a>
+          <Link to='/'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              HOME
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            PACKAGE
-          </a>
+          <Link to='/package'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              PACKAGE
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            OUR BOATS
-          </a>
+          <Link to='/ourboats'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              OUR BOATS
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            GALLERY
-          </a>
+          <Link to='/gallery'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              GALLERY
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            ABOUT US
-          </a>
+          <Link to='/about'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              ABOUT US
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
-          <a
-            href="#"
-            className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
-          >
-            CONTACT US
-          </a>
+          <Link to='/contact'>
+            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
+              CONTACT US
+            </li>
+          </Link>
           <span className="border-1 h-6"></span>
         </ul>
       </div>
