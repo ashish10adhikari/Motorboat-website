@@ -26,8 +26,8 @@ const Footer = () => {
                 <img src={logo} alt="" className="w-44 h-20" />
               </div>
 
-              <p className=" max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left text-3xl font-primary">
-                Aayushma Motorboat
+              <p className=" max-w-md text-center leading-relaxed text-gray-500 sm:max-w-xs sm:text-left text-2xl font-primary">
+                Aayushma River Adventure
               </p>
 
               <ul className="mt-8 flex justify-center gap-6 sm:justify-start md:gap-8">
@@ -262,7 +262,7 @@ const Footer = () => {
           <div className="mt-12 border-t border-gray-100 pt-6">
             <div className="text-center sm:flex sm:justify-center sm:text-left">
               <p className="mt-4 text-sm text-gray-500 sm:order-first sm:mt-0">
-                &copy; {currentYear} Aayushma Motorboat Company Pvt. Ltd.
+                &copy; {currentYear} Aayushma River Adventure Pvt. Ltd.
               </p>
             </div>
           </div>
