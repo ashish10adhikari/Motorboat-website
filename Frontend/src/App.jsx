@@ -1,31 +1,27 @@
-import Header from "./Component/Header";
 import Navbar from "./Component/Navbar";
-import Package from "./Component/Package";
-import WhyChooseUs from "./Component/WhyChooseUs";
-import Highlight from "./Component/Highlight";
-import Showcase from "./Component/Showcase";
 import Footer from "./Component/Footer";
-import Iframe from "./Component/Iframe";
-import Testimonial from "./Component/Testimonial";
-import Ourteam from "./Component/Ourteam";
-import Contact from "./Component/Contact";
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Contact from "./Pages/Contact";
+import Book from "./Pages/Book";
+import OurBoats from "./Pages/OurBoats";
+import Packages from "./Pages/Packages";
+import About from "./Pages/About";
+import Gallery from "./Pages/Gallery";
 function App() {
   return (
     <div className="w-full">
       <Navbar />
-      <Header />
-      <Showcase />
-      <Package />
-      <WhyChooseUs />
-      <Highlight />
-      <Ourteam/>
-      <Contact/>
-      
-      <Testimonial/>
-      <Iframe/>
-      <Footer/>
-      
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/book" element={<Book />} />
+        <Route path="/ourboats" element={<OurBoats />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/gallery" element={<Gallery />} />
+      </Routes>
+      <Footer />
     </div>
   );
 }

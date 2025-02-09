@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faFacebook } from "@fortawesome/free-brands-svg-icons";
 
-const Contact = () => {
+const ContactForm = () => {
   return (
     <div>
       <div className="w-full text-center text-3xl bg-black text-white p-10 font-bold">
@@ -88,4 +88,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default ContactForm;
