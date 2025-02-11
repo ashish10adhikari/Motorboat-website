@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -18,41 +18,71 @@ const Navbar = () => {
       <div className=" w-full bg-slate-800 text-white text-center py-2">
         <ul className="flex justify-center gap-5 h-14 items-center">
           <span className="border-1 h-6"></span>
-          <Link to='/'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              HOME
-            </li>
-          </Link>
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            HOME
+          </NavLink>
           <span className="border-1 h-6"></span>
-          <Link to='/package'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              PACKAGE
-            </li>
-          </Link>
+          <NavLink
+            to="/package"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            PACKAGE
+          </NavLink>
           <span className="border-1 h-6"></span>
-          <Link to='/ourboats'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              OUR BOATS
-            </li>
-          </Link>
+          <NavLink
+            to="/ourboats"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            OUR BOATS
+          </NavLink>
           <span className="border-1 h-6"></span>
-          <Link to='/gallery'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              GALLERY
-            </li>
-          </Link>
+          <NavLink
+            to="/gallery"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            GALLERY
+          </NavLink>
           <span className="border-1 h-6"></span>
-          <Link to='/about'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              ABOUT US
-            </li>
-          </Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            ABOUT US
+          </NavLink>
           <span className="border-1 h-6"></span>
-          <Link to='/contact'>
-            <li className="hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500">
-              CONTACT US
-            </li>
-          </Link>
+          <NavLink
+            to="/contact"
+            className={({ isActive }) =>
+              isActive
+                ? "bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500 "
+                : "hover:bg-cyan-700 font-secondary font-bold p-5 transition-all ease-in-out duration-500"
+            }
+          >
+            CONTACT US
+          </NavLink>
           <span className="border-1 h-6"></span>
         </ul>
       </div>
