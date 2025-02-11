@@ -5,8 +5,12 @@ import {
   faTag,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { useNavigate } from "react-router-dom";
+
 
 const Showcase = () => {
+
+  const navigate = useNavigate();
   return (
     <div className="grid grid-cols-3 p-10 bg-gray-100">
       <div className="col-span-2 p-10">
@@ -30,7 +34,7 @@ const Showcase = () => {
         <li>
           <FontAwesomeIcon icon={faTag} /> Group Discounts
         </li>
-        <a href="#" className="bg-cyan-700 p-3 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500">Contact us</a>
+        <button onClick={()=> navigate('/contact')} className="bg-cyan-700 p-3 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500">Contact us</button>
       </ul>
     </div>
   );
