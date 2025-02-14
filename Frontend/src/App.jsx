@@ -9,6 +9,7 @@ import Packages from "./Pages/Packages";
 import About from "./Pages/About";
 import Gallery from "./Pages/Gallery";
 import Layout from "./Layout/Layout";
+import Error404 from "./Component/Error404";
 
 
 
@@ -24,7 +25,7 @@ function App() {
         <Route path="package" element={<Packages />} />
         <Route path="about" element={<About />} />
         <Route path="gallery" element={<Gallery />} />
-
+        <Route path="*" element={<Error404/>}/>
       </Route>
     )
   )
