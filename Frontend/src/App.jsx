@@ -15,6 +15,7 @@ import Layout from "./Layout/Layout";
 import Error404 from "./Component/Error404";
 import Login from "./Admin/Login";
 import AdminLayout from "./Layout/AdminLayout";
+import Dashboard from "./Admin/Dashboard";
 
 function App() {
   const router = createBrowserRouter(
@@ -29,10 +30,10 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="*" element={<Error404 />} />
-          <Route path="admin" element={<Login />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>
           <Route index element={<Login/>}/>
+          <Route path="dashboard" element={<Dashboard/>}/>
         </Route>
       </>
     )

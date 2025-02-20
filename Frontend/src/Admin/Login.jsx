@@ -13,10 +13,11 @@ const Login = () => {
             </h1>
           </div>
           <div className="flex flex-col items-start pt-5">
-            <label htmlFor="email">Your Username</label>
+            <label htmlFor="email">Username</label>
             <input
               type="text"
               name="email"
+              placeholder="Enter your username"
               className="w-full p-3 rounded-lg mt-2 border border-gray-500 outline-cyan-700"
             />
           </div>
@@ -25,6 +26,7 @@ const Login = () => {
             <input
               type="password"
               name="password"
+              placeholder="Enter your password"
               className="w-full p-3 rounded-lg mt-2 border border-gray-500 outline-cyan-700"
             />
           </div>
