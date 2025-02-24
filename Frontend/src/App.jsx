@@ -3,19 +3,21 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-} from "react-router-dom";
-import Home from "./Pages/Home";
-import Contact from "./Pages/Contact";
-import Book from "./Pages/Book";
-import OurBoats from "./Pages/OurBoats";
-import Packages from "./Pages/Packages";
-import About from "./Pages/About";
-import Gallery from "./Pages/Gallery";
-import Layout from "./Layout/Layout";
-import Error404 from "./Component/Error404";
-import Login from "./Admin/Login";
-import AdminLayout from "./Layout/AdminLayout";
-import Dashboard from "./Admin/Dashboard";
+} from "react-router-dom"
+import Home from "./Pages/Home"
+import Contact from "./Pages/Contact"
+import Book from "./Pages/Book"
+import OurBoats from "./Pages/OurBoats"
+import Packages from "./Pages/Packages"
+import About from "./Pages/About"
+import Gallery from "./Pages/Gallery"
+import Layout from "./Layout/Layout"
+import Error404 from "./Component/Error404"
+import Login from "./Admin/Login"
+import AdminLayout from "./Layout/AdminLayout"
+import DashboardLayout from './Layout/DashboardLayout'
+import Dashboard from "./Admin/Dashboard"
+import AdminPackage from "./Admin/Component/AdminPackage"
 
 function App() {
   const router = createBrowserRouter(
@@ -32,8 +34,11 @@ function App() {
           <Route path="*" element={<Error404 />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>
-          <Route index element={<Login/>}/>
-          <Route path="dashboard" element={<Dashboard/>}/>
+          <Route index element={<Login />} />
+          <Route path="dashboard" element={<DashboardLayout/>}>
+            <Route index element={<Dashboard/>}/>
+            <Route path="adminpackage" element={<AdminPackage />} />
+          </Route>
         </Route>
       </>
     )
