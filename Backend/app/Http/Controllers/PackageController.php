@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PackageController extends Controller
 {
-    public class package(){
-        
-    }
+    // public class package(){
+
+    // }
 }
