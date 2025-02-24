@@ -18,6 +18,9 @@ import AdminLayout from "./Layout/AdminLayout"
 import DashboardLayout from './Layout/DashboardLayout'
 import Dashboard from "./Admin/Dashboard"
 import AdminPackage from "./Admin/Component/AdminPackage"
+import Image from './Admin/Component/Image'
+import AdminGallery from './Admin/Component/AdminGallery'
+import Message from './Admin/Component/Message'
 
 function App() {
   const router = createBrowserRouter(
@@ -37,7 +40,10 @@ function App() {
           <Route index element={<Login />} />
           <Route path="dashboard" element={<DashboardLayout/>}>
             <Route index element={<Dashboard/>}/>
-            <Route path="adminpackage" element={<AdminPackage />} />
+            <Route path="package" element={<AdminPackage />} />
+            <Route path="image" element={<Image/>} />
+            <Route path="gallery" element={<AdminGallery/>} />
+            <Route path="message" element={<Message/>} />
           </Route>
         </Route>
       </>
