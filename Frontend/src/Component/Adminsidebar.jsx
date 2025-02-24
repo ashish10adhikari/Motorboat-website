@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 
 const Adminsidebar = () => {
   return (
-    <div className="absolute top-0 left-0 pt-10 bg-gray-700 text-white h-full w-60">
-      <h1 className="text-2xl font-bold py-20">Admin Panel</h1>
+    <div className="absolute top-0 left-0 pt-10 bg-slate-800 text-white h-full w-60">
+      <h1 className="text-3xl font-bold py-20 font-secondary">Admin Panel</h1>
       <ul className="gap-4 flex flex-col px-10">
         <NavLink
           to="/admin/dashboard"
@@ -17,7 +17,7 @@ const Adminsidebar = () => {
         >
           Dashboard
         </NavLink>
-        <hr />
+        <hr className="mx-10"/>
         <NavLink
           to="/admin/dashboard/package"
           className={({ isActive }) =>
@@ -28,7 +28,7 @@ const Adminsidebar = () => {
         >
           Package
         </NavLink>
-        <hr />
+        <hr className="mx-10"/>
         <NavLink
           to="/admin/dashboard/image"
           className={({ isActive }) =>
@@ -39,7 +39,7 @@ const Adminsidebar = () => {
         >
           Images
         </NavLink>
-        <hr />
+        <hr className="mx-10"/>
         <NavLink
           to="/admin/dashboard/gallery"
           className={({ isActive }) =>
@@ -50,7 +50,7 @@ const Adminsidebar = () => {
         >
           Gallery{" "}
         </NavLink>
-        <hr />
+        <hr className="mx-10"/>
         <NavLink
           to="/admin/dashboard/message"
           className={({ isActive }) =>
