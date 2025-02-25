@@ -5,15 +5,14 @@ import Adminsidebar from "../Component/Adminsidebar";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col w-full">
       <Topbar />
-
-      <div className="flex flex-1">
+      <div className="flex flex-row">
         <Adminsidebar />
-
-        <div className="flex-1 p-4 ml-60">
+        <div className="ml-60 flex-1">
           <Outlet />
         </div>
+        
       </div>
     </div>
   );
