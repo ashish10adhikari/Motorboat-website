@@ -1,5 +1,5 @@
 import React from "react";
-import '../Component/adminpackage.css'
+import "../Component/adminpackage.css";
 
 const AdminPackage = () => {
   return (
@@ -69,9 +69,11 @@ const AdminPackage = () => {
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
-            <button className="bg-cyan-700 py-3 px-6 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 text-white">
-              Add
-            </button>
+            <input
+              type="button"
+              value="Add"
+              className="bg-cyan-700 py-3 px-6 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 text-white"
+            />
           </div>
         </form>
       </div>

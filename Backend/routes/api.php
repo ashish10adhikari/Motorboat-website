@@ -19,3 +19,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::get('package', [PackageController::class, 'package'])->name('package');
+Route::post('package', [PackageController::class, 'packageform'])->name('package.send');
