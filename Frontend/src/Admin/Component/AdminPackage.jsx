@@ -1,5 +1,6 @@
 import React from "react";
 import "../Component/adminpackage.css";
+import { useState, useEffect } from "react";
 
 const AdminPackage = () => {
   return (
@@ -63,9 +64,10 @@ const AdminPackage = () => {
               >
                 Description:
               </label>
-              <input
+              <textarea
                 type="text"
                 name="description"
+                cols={100}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
