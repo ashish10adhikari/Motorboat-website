@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Package;
+use Validator;
 
 class PackageController extends Controller
 {
@@ -16,7 +17,7 @@ class PackageController extends Controller
         return response()->json($data);
     }
 
-    public function packageform(Requst $request){
+    public function packageform(Request $request){
         $request->validate([
             'title' => 'required|string|max:255',
             'price' => 'required|numeric',
@@ -32,6 +33,8 @@ class PackageController extends Controller
             $package->image= $imagepath;
         }
 
-        return responsse()->json(['message'=> 'Package created succesfully'],201);
+        $package->save();
+
+        return response()->json(['message'=> 'Package created succesfully'],201);
     }
 }

@@ -3,6 +3,23 @@ import "../Component/adminpackage.css";
 import { useState, useEffect } from "react";
 
 const AdminPackage = () => {
+
+  const [formData, setformData] = useState({
+    title: "",
+    description: "",
+    price: "",
+    image: null,
+
+  });
+
+  const[message, setmessage] =useState('');
+
+
+
+
+
+
+
   return (
     <div className=" min-h-screen w-full">
       <div className="flex flex-col text-center">
