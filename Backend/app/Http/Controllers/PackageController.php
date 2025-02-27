@@ -15,4 +15,23 @@ class PackageController extends Controller
         ];
         return response()->json($data);
     }
+
+    public function packageform(Requst $request){
+        $request->validate([
+            'title' => 'required|string|max:255',
+            'price' => 'required|numeric',
+            'description' => 'required|string',
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        $package = new Package;
+        $package->title = $request->title;
+        $package->price = $request->price;
+        $package->description = $request->description;
+        if($request->hasfile('image')){
+            $imagepath = $request->file('image')->store('images','public');
+            $package->image= $imagepath;
+        }
+
+        return responsse()->json(['message'=> 'Package created succesfully'],201);
+    }
 }
