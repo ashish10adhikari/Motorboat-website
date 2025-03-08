@@ -8,7 +8,7 @@ const AdminPackage = () => {
     image: null,
   });
 
-  const [message, setMessage] = useState("");
+  
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
