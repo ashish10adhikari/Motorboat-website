@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../Component/adminpackage.css";
-import DataTable from "./DataTable";
+import Table from "./Table";
 
 const AdminPackage = () => {
   const [formData, setFormData] = useState({
@@ -131,7 +131,7 @@ const AdminPackage = () => {
           </div>
         </form>
       </div>
-      <DataTable />
+      <Table />
     </div>
   );
 };
