@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../Component/adminpackage.css";
+import DataTable from "./DataTable";
 
 const AdminPackage = () => {
   const [formData, setFormData] = useState({
@@ -7,8 +9,6 @@ const AdminPackage = () => {
     price: "",
     image: null,
   });
-
-  
 
   const handleChange = (e) => {
     if (e.target.name === "image") {
@@ -39,7 +39,7 @@ const AdminPackage = () => {
 
       if (response.ok) {
         alert("Package added successfully!");
-        setFormData({ title: "", price: "", description: "", image: null }); 
+        setFormData({ title: "", price: "", description: "", image: null });
       } else {
         alert("Error: " + result.message);
       }
@@ -54,37 +54,46 @@ const AdminPackage = () => {
         <h1 className="text-3xl font-secondary">Packages</h1>
 
         <form
-          onSubmit={handleSubmit} 
+          onSubmit={handleSubmit}
           className="flex flex-col w-full justify-center items-center gap-5"
         >
           <div className="flex flex-row gap-5">
             <div className="gap-2 flex">
-              <label htmlFor="title" className="justify-center items-center flex">
+              <label
+                htmlFor="title"
+                className="justify-center items-center flex"
+              >
                 Title:
               </label>
               <input
                 type="text"
                 name="title"
-                value={formData.title} 
+                value={formData.title}
                 onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
             <div className="gap-2 flex">
-              <label htmlFor="price" className="justify-center items-center flex">
+              <label
+                htmlFor="price"
+                className="justify-center items-center flex"
+              >
                 Price:
               </label>
               <input
                 type="number"
                 name="price"
-                value={formData.price} 
+                value={formData.price}
                 onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
 
             <div className="gap-2 flex">
-              <label htmlFor="image" className="justify-center items-center flex">
+              <label
+                htmlFor="image"
+                className="justify-center items-center flex"
+              >
                 Image:
               </label>
               <input
@@ -99,7 +108,10 @@ const AdminPackage = () => {
 
           <div className="flex flex-row gap-5">
             <div className="gap-2 flex">
-              <label htmlFor="description" className="justify-center items-center flex">
+              <label
+                htmlFor="description"
+                className="justify-center items-center flex"
+              >
                 Description:
               </label>
               <textarea
@@ -119,6 +131,7 @@ const AdminPackage = () => {
           </div>
         </form>
       </div>
+      <DataTable />
     </div>
   );
 };
