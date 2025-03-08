@@ -8,14 +8,13 @@ use Validator;
 
 class PackageController extends Controller
 {
-    public function package(){
+    public function package() {
         $package = Package::all();
-        $data =[
-           " package" => $package,
-            "message" => 200
-        ];
-        return response()->json($data);
+        return response()->json([
+            "package" => $package
+        ], 200);
     }
+    
 
     public function packageform(Request $request){
         $request->validate([
