@@ -30,7 +30,6 @@ const Table = () => {
     {
       name: "Image",
       selector: (row) => row.image,
-      sortable: true,
       cell: (row) => (
         <img
           src={`http://127.0.0.1:8000/storage/${row.image}`}
@@ -39,14 +38,24 @@ const Table = () => {
         />
       ),
     },
+    {
+      name: "Action",
+      cell: (row) => (
+        <>
+          <button onClick={()=>handleEdit(row.id)}>Edit</button>
+          <button onClick={()=>handleDelete(row.id)}>Delete</button>
+        </>
+      ),
+    },
   ];
   return (
     <div>
       <h2>Package List</h2>
       <DataTable
-        columns = {columns}
-        data = {data}
+        columns={columns}
+        data={data}
         highlightOnHover
+        pagination
         striped
       />
     </div>
