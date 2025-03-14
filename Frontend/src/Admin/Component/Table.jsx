@@ -16,7 +16,12 @@ const Table = () => {
         method: "DELETE",
       })
       .then((response)=> response.json())
-      .then(()=> {alert('Package deleted successfully');})
+      .then(()=> {alert('Package deleted successfully');
+        fetch("http://127.0.0.1:8000/api/package")
+        .then((response) => response.json())
+        .then((data) => setData(data.package))  
+        .catch((error) => console.error("Error fetching data:", error));
+      })
       .catch((error)=> console.error('Error Deleting Package:', error))
     }
   }

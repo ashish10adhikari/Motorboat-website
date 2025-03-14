@@ -45,7 +45,7 @@ function App() {
             <Route path="image" element={<Image/>} />
             <Route path="gallery" element={<AdminGallery/>} />
             <Route path="message" element={<Message/>} />
-            <Route path="package/:id" element={<EditPackage/>} />
+            <Route path="package/edit/:id" element={<EditPackage/>} />
           </Route>
         </Route>
       </>
