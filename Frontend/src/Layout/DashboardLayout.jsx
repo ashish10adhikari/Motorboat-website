@@ -1,7 +1,7 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Topbar from "../Component/Topbar";
-import Adminsidebar from "../Component/Adminsidebar";
+import Adminsidebar from "../Admin/Component/Adminsidebar";
 
 const DashboardLayout = () => {
   return (

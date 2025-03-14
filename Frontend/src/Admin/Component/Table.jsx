@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import DataTable from "react-data-table-component";
+import {useNavigate } from "react-router-dom";
 
 const Table = () => {
   const [data, setData] = useState([]);
+  const navigate = useNavigate();
+
+  const handleEdit= (id)=>{
+    navigate(`/admin/dashboard/package/edit/${id}`);
+  }
 
   const handleDelete=(id)=>{
     if(window.confirm("Do you want to delete this package?")){
