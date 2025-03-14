@@ -4,6 +4,17 @@ import DataTable from "react-data-table-component";
 const Table = () => {
   const [data, setData] = useState([]);
 
+  const handleDelete=(id)=>{
+    if(window.confirm("Do you want to delete this package?")){
+      fetch(`http://127.0.0.1:8000/api/package/${id}`,{
+        method: "DELETE",
+      })
+      .then((response)=> response.json())
+      .then(()=> {alert('Package deleted successfully');})
+      .catch((error)=> console.error('Error Deleting Package:', error))
+    }
+  }
+
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/package")
       .then((response) => response.json())
@@ -42,15 +53,19 @@ const Table = () => {
       name: "Action",
       cell: (row) => (
         <>
-          <button onClick={()=>handleEdit(row.id)}>Edit</button>
-          <button onClick={()=>handleDelete(row.id)}>Delete</button>
-        </>
+        <button onClick={() => handleEdit(row.id)} className="bg-blue-500 text-white px-3 py-1 m-1 cursor-pointer hover:bg-blue-600">
+          Edit
+        </button>
+        <button onClick={() => handleDelete(row.id)} className="bg-red-500 text-white px-3 py-1 m-1 cursor-pointer hover:bg-red-600">
+          Delete
+        </button>
+      </>
       ),
     },
   ];
   return (
-    <div>
-      <h2>Package List</h2>
+    <div className="p-10">
+      <h2 className="text-2xl font-bold font-secondary">Package List</h2>
       <DataTable
         columns={columns}
         data={data}
