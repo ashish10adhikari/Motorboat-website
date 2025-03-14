@@ -36,4 +36,10 @@ class PackageController extends Controller
 
         return response()->json(['message'=> 'Package created succesfully'],201);
     }
+
+    public function deletepackage($id){
+        $package = Package::find($id);
+        $package-> delete();
+        return response()->json(['message'=> 'Package deleted successfully'],201);
+    }
 }

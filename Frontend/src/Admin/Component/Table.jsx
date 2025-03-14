@@ -6,7 +6,7 @@ const Table = () => {
 
   const handleDelete=(id)=>{
     if(window.confirm("Do you want to delete this package?")){
-      fetch(`http://127.0.0.1:8000/api/package/${id}`,{
+      fetch(`http://127.0.0.1:8000/api/package/delete/${id}`,{
         method: "DELETE",
       })
       .then((response)=> response.json())
