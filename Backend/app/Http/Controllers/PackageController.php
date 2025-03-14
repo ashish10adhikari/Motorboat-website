@@ -42,4 +42,26 @@ class PackageController extends Controller
         $package-> delete();
         return response()->json(['message'=> 'Package deleted successfully'],201);
     }
+
+    public function updatepackage(Request $request, $id){
+        $package = Package::findorFail($id);
+
+        if($request->has('title')){
+            $package->title = $request->title;
+        }
+        if($request->has('price')){
+            $package->price = $request->price;
+        }
+        if($request->has('description')){
+            $package->description = $request->description;
+        }
+        if($request->hasfile('image')){
+            $imagepath = $request->file('image')->store('images','public');
+            $package->image= $imagepath;
+        }
+
+        $package->save();
+
+        return response()->json(['message'=>'Package updated succesfully!']);
+    }
 }

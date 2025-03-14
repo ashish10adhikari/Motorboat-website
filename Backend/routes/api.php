@@ -22,3 +22,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('package', [PackageController::class, 'package'])->name('package');
 Route::post('package', [PackageController::class, 'packageform'])->name('package.send');
 Route::delete('package/delete/{id}',[PackageController::class, 'deletepackage'])->name('package.delete');
+Route::patch('package/patch/{id}',[PackageController::class, 'updatepackage'])->name('package.update');
