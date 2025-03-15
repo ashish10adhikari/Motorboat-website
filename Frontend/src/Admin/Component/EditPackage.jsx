@@ -1,8 +1,9 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const EditPackage = () => {
+  const navigate = useNavigate();
   const { id } = useParams();
 
   const [packageData, setPackagedata] = useState({
@@ -12,14 +13,41 @@ const EditPackage = () => {
     image: "",
   });
 
-  const handleChange=(e)=>{
-    if(e.target.name === 'image'){
-      setPackagedata({...packageData,[e.target.name]:e.target.files[0]});
+  const handleChange = (e) => {
+    if (e.target.name === "image") {
+      setPackagedata({ ...packageData, [e.target.name]: e.target.files[0] });
+    } else {
+      setPackagedata({ ...packageData, [e.target.name]: e.target.value });
     }
-    else{
-      setPackagedata({...packageData,[e.target.name]:e.target.value});
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append("title", packageData.title);
+    formData.append("price", packageData.price);
+    formData.append("description", packageData.description);
+    if (packageData.image instanceof File) {
+      formData.append("image", packageData.image);
     }
-  }
+    formData.append('_method', 'PATCH');
+
+    fetch(`http://127.0.0.1:8000/api/package/patch/${id}`, {
+      method: "POST",
+      body: formData,
+      headers: {
+       
+        "Accept": "application/json",
+        
+      },
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        alert("Package updated successfully");
+        navigate("/admin/dashboard/package");
+      })
+      .catch((error) => console.error("Error updating package:", error));
+  };
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/package/${id}`)
@@ -34,7 +62,7 @@ const EditPackage = () => {
         <h1 className="text-3xl font-secondary">Packages</h1>
 
         <form
-          // onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           className="flex flex-col w-full justify-center items-center gap-5"
         >
           <div className="flex flex-row gap-5">
@@ -83,12 +111,12 @@ const EditPackage = () => {
                 accept="image/png, image/jpeg"
                 id="image"
               />
-              {packagedata.image && (
+              {packageData.image && (
                 <img
                   src={
-                    packagedata.image instanceof File
+                    packageData.image instanceof File
                       ? URL.createObjectURL(packageData.image)
-                      : `http://127.0.0.1:8000/storage/${packagedata.image}`
+                      : `http://127.0.0.1:8000/storage/${packageData.image}`
                   }
                   alt="Preview"
                   width="100"
@@ -117,7 +145,7 @@ const EditPackage = () => {
               type="submit"
               className="bg-cyan-700 py-3 px-6 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 text-white"
             >
-              Add Package
+              Update Package
             </button>
           </div>
         </form>
