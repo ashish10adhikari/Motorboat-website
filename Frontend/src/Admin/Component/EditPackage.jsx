@@ -30,15 +30,13 @@ const EditPackage = () => {
     if (packageData.image instanceof File) {
       formData.append("image", packageData.image);
     }
-    formData.append('_method', 'PATCH');
+    formData.append("_method", "PATCH");
 
     fetch(`http://127.0.0.1:8000/api/package/patch/${id}`, {
       method: "POST",
       body: formData,
       headers: {
-       
-        "Accept": "application/json",
-        
+        Accept: "application/json",
       },
     })
       .then((response) => response.json())
@@ -149,6 +147,16 @@ const EditPackage = () => {
             </button>
           </div>
         </form>
+        <div className="flex justify-center items-center">
+          <button
+            onClick={() => {
+              navigate("/admin/dashboard/package");
+            }}
+            className="bg-cyan-700 mt-5 w-1/3 py-3 px-6 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 text-white"
+          >
+            GO BACK
+          </button>
+        </div>
       </div>
     </div>
   );
