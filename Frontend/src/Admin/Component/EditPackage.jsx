@@ -16,8 +16,8 @@ const EditPackage = () => {
     fetch(`http://127.0.0.1:8000/api/package/${id}`)
       .then((response) => response.json())
       .then((data) => setPackagedata(data.package))
-      .catch((error)=>console.error('Error Fetching Data',error));
-  },[id]);
+      .catch((error) => console.error("Error Fetching Data", error));
+  }, [id]);
 
   return (
     <div className="min-h-screen w-full">
@@ -74,6 +74,17 @@ const EditPackage = () => {
                 accept="image/png, image/jpeg"
                 id="image"
               />
+              {packagedata.image && (
+                <img
+                  src={
+                    packagedata.image instanceof File
+                      ? URL.createObjectURL(packagedata.image)
+                      : `http://127.0.0.1:8000/storage/${packagedata.image}`
+                  }
+                  alt="Preview"
+                  width="100"
+                />
+              )}
             </div>
           </div>
 

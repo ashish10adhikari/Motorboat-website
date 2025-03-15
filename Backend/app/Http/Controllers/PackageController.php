@@ -14,6 +14,11 @@ class PackageController extends Controller
             "package" => $package
         ], 200);
     }
+
+    public function packageshow($id){
+        $package = Package::findorfail($id);
+        return response()->json(['package' => $package],200);
+    }
     
 
     public function packageform(Request $request){
