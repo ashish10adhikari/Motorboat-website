@@ -5,12 +5,21 @@ import { useEffect, useState } from "react";
 const EditPackage = () => {
   const { id } = useParams();
 
-  const [packagedata, setPackagedata] = useState({
+  const [packageData, setPackagedata] = useState({
     title: "",
     price: "",
     description: "",
     image: "",
   });
+
+  const handleChange=(e)=>{
+    if(e.target.name === 'image'){
+      setPackagedata({...packageData,[e.target.name]:e.target.files[0]});
+    }
+    else{
+      setPackagedata({...packageData,[e.target.name]:e.target.value});
+    }
+  }
 
   useEffect(() => {
     fetch(`http://127.0.0.1:8000/api/package/${id}`)
@@ -39,8 +48,8 @@ const EditPackage = () => {
               <input
                 type="text"
                 name="title"
-                value={packagedata.title}
-                // onChange={handleChange}
+                value={packageData.title}
+                onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
@@ -54,8 +63,8 @@ const EditPackage = () => {
               <input
                 type="number"
                 name="price"
-                value={packagedata.price}
-                // onChange={handleChange}
+                value={packageData.price}
+                onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
@@ -70,7 +79,7 @@ const EditPackage = () => {
               <input
                 type="file"
                 name="image"
-                // onChange={handleChange}
+                onChange={handleChange}
                 accept="image/png, image/jpeg"
                 id="image"
               />
@@ -78,7 +87,7 @@ const EditPackage = () => {
                 <img
                   src={
                     packagedata.image instanceof File
-                      ? URL.createObjectURL(packagedata.image)
+                      ? URL.createObjectURL(packageData.image)
                       : `http://127.0.0.1:8000/storage/${packagedata.image}`
                   }
                   alt="Preview"
@@ -98,8 +107,8 @@ const EditPackage = () => {
               </label>
               <textarea
                 name="description"
-                value={packagedata.description}
-                // onChange={handleChange}
+                value={packageData.description}
+                onChange={handleChange}
                 cols={100}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
