@@ -1,8 +1,23 @@
-import React from 'react'
-import { useParams } from 'react-router-dom'
+import React from "react";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 const EditPackage = () => {
-    const {id} = useParams();
+  const { id } = useParams();
+
+  const [packagedata, setPackagedata] = useState({
+    title: "",
+    price: "",
+    description: "",
+    image: "",
+  });
+
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/api/package/${id}`)
+      .then((response) => response.json())
+      .then((data) => setPackagedata(data.package))
+      .catch((error)=>console.error('Error Fetching Data',error));
+  },[id]);
 
   return (
     <div className="min-h-screen w-full">
@@ -10,7 +25,7 @@ const EditPackage = () => {
         <h1 className="text-3xl font-secondary">Packages</h1>
 
         <form
-          onSubmit={handleSubmit}
+          // onSubmit={handleSubmit}
           className="flex flex-col w-full justify-center items-center gap-5"
         >
           <div className="flex flex-row gap-5">
@@ -24,8 +39,8 @@ const EditPackage = () => {
               <input
                 type="text"
                 name="title"
-                value={formData.title}
-                onChange={handleChange}
+                value={packagedata.title}
+                // onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
@@ -39,8 +54,8 @@ const EditPackage = () => {
               <input
                 type="number"
                 name="price"
-                value={formData.price}
-                onChange={handleChange}
+                value={packagedata.price}
+                // onChange={handleChange}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
             </div>
@@ -55,7 +70,7 @@ const EditPackage = () => {
               <input
                 type="file"
                 name="image"
-                onChange={handleChange}
+                // onChange={handleChange}
                 accept="image/png, image/jpeg"
                 id="image"
               />
@@ -72,8 +87,8 @@ const EditPackage = () => {
               </label>
               <textarea
                 name="description"
-                value={formData.description}
-                onChange={handleChange}
+                value={packagedata.description}
+                // onChange={handleChange}
                 cols={100}
                 className="p-3 border border-gray-700 focus:outline-none focus:ring focus:ring-cyan-700 focus:border-cyan-700"
               />
@@ -87,9 +102,8 @@ const EditPackage = () => {
           </div>
         </form>
       </div>
-      
     </div>
-  )
-}
+  );
+};
 
-export default EditPackage
+export default EditPackage;
