@@ -22,6 +22,7 @@ import Image from './Admin/Component/Image'
 import AdminGallery from './Admin/Component/AdminGallery'
 import Message from './Admin/Component/Message'
 import EditPackage from "./Admin/Component/EditPackage"
+import PackageSlider from "./Component/PackageSlider"
 
 function App() {
   const router = createBrowserRouter(
@@ -35,6 +36,7 @@ function App() {
           <Route path="package" element={<Packages />} />
           <Route path="about" element={<About />} />
           <Route path="gallery" element={<Gallery />} />
+          <Route path="packageslider" element={<PackageSlider />} />
           <Route path="*" element={<Error404 />} />
         </Route>
         <Route path="admin" element={<AdminLayout />}>
