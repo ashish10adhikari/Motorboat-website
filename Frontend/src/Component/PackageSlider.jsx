@@ -13,49 +13,62 @@ const PackageSlider = () => {
         const formattedSlides = data.package.map((item) => ({
           key: uuidv4(),
           content: (
-            // Removed responsive width class (md:w-1/3) for fixed slide width
             <div className="p-5 rounded-lg w-80 bg-gray-200 mx-4">
               <img
-                src={item.image}
+                src={`http://127.0.0.1:8000/storage/${item.image}`}
                 alt={item.title}
                 className="h-64 w-full rounded-md object-cover"
               />
-              <hr className="border-1 mt-5 mx-10 border-gray-400" />
               <h2 className="text-2xl font-bold text-black mt-4 text-center">
                 {item.title}
               </h2>
               <h3 className="p-5 text-center text-3xl font-bold text-black">
-                {item.price}.
+                ${item.price}
               </h3>
               <p className="text-gray-700 mt-2 pb-5">{item.description}</p>
             </div>
           ),
         }));
         setPackageData(formattedSlides);
+        console.log("Slides loaded:", formattedSlides.length);
       })
       .catch((error) => console.error("Error fetching data", error));
   }, []);
+  
 
   return (
-    // Added fixed height and centered content
-    <div className="carousel-container min-h-screen w-full flex flex-col items-center justify-center">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center p-4">
       {packageData.length > 0 ? (
-        <Carousel
-          slides={packageData}
-          goToSlide={goToSlide}
-          offsetRadius={2} // Show adjacent slides
-          animationConfig={{ tension: 120, friction: 14 }} // Smooth transition
-        />
+        <>
+          
+          <div className="relative w-full max-w-4xl h-[500px]"> 
+            <Carousel
+              slides={packageData}
+              goToSlide={goToSlide}
+              offsetRadius={2}
+              animationConfig={{ tension: 200, friction: 30 }}
+            />
+          </div>
+          
+          
+          <div className="flex gap-4 mt-8 z-10"> 
+            <button
+              onClick={() => setGoToSlide((prev) => 
+                (prev - 1 + packageData.length) % packageData.length)}
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition"
+            >
+              Previous
+            </button>
+            <button
+              onClick={() => setGoToSlide((prev) => (prev + 1) % packageData.length)}
+              className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition"
+            >
+              Next
+            </button>
+          </div>
+        </>
       ) : (
-        <p>Loading...</p>
-      )}
-      {packageData.length > 0 && (
-        <button
-          onClick={() => setGoToSlide((prev) => (prev + 1) % packageData.length)}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Next
-        </button>
+        <p className="text-lg">Loading packages...</p>
       )}
     </div>
   );
