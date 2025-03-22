@@ -1,6 +1,7 @@
 import React from "react";
 import safety from "../assets/safety.jpg";
 import bg from "../assets/bg.jpg";
+import PackageSlider from "./PackageSlider";
 
 const Package = () => {
   return (
@@ -22,42 +23,8 @@ const Package = () => {
         </h2>
       </div>
 
-      <div className="flex flex-col md:flex-row justify-center gap-8 px-12 w-full text-center">
-       
-        <div className="p-5 rounded-lg w-full md:w-1/3 bg-gray-200">
-          <img
-            src={safety}
-            alt="Short Package"
-            className="h-64 w-full rounded-md object-cover"
-          />
-          <hr className="border-1 mt-5 mx-10 border-gray-400" />
-          <h2 className="text-2xl font-bold text-black mt-4 text-center">
-            Short Package
-          </h2>
-          <h3 className="p-5 text-center text-3xl font-bold text-black">Rs 250.</h3>
-          <p className="text-gray-700 mt-2 pb-5">
-            Enjoy a relaxing day on the river with our most popular package.
-            You will take a scenic tour of the Narayani River, where you can enjoy
-            the beauty of the surroundings.
-          </p>
-        </div>
-
-        <div className="p-5 rounded-lg w-full md:w-1/3 bg-gray-200">
-          <img
-            src={safety}
-            alt="Long Package"
-            className="h-64 w-full rounded-md object-cover"
-          />
-          <hr className="border-1 mt-5 mx-10 border-gray-400" />
-          <h2 className="text-2xl font-bold text-black mt-4 text-center">
-            Long Package
-          </h2>
-          <h3 className="p-5 text-center text-3xl font-bold text-black">Rs 500.</h3>
-          <p className="text-gray-700 mt-2 pb-5">
-            Experience the thrill of white-water rafting with our adrenaline-pumping
-            package. Navigate through rapids and enjoy the rush of the water.
-          </p>
-        </div>
+      <div className="flex flex-col md:flex-row justify-center gap-8 px-12 w-1/2 text-center">
+       <PackageSlider/>
       </div>
     </div>
   );

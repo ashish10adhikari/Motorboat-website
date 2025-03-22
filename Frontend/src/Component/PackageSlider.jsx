@@ -46,7 +46,7 @@ const PackageSlider = () => {
               slides={packageData}
               goToSlide={goToSlide}
               offsetRadius={2}
-              animationConfig={{ tension: 200, friction: 30 }}
+              animationConfig={{ tension: 300, friction: 30 }}
             />
           </div>
           
