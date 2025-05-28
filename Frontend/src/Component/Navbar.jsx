@@ -7,8 +7,8 @@ const Navbar = () => {
     <>
       <Topbar/>
 
-      <div className=" w-full bg-slate-800 text-white text-center py-2">
-        <ul className="flex justify-center gap-5 h-14 items-center">
+      <div className=" w-full bg-slate-800 text-white text-center py-2 sticky top-30 z-50">
+        <ul className="flex justify-center gap-2 h-12 items-center">
           <span className="border-1 h-6"></span>
           <NavLink
             to="/"

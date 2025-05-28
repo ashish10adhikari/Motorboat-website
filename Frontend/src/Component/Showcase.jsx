@@ -26,7 +26,7 @@ const Showcase = () => {
       </div>
       <ul className="col-span-1 justify-center items-center flex flex-col gap-5 text-xl bg-slate-800 text-white p-10">
         <li>
-          <FontAwesomeIcon icon={faPeopleGroup} /> Group Tours
+          <FontAwesomeIcon icon={faPeopleGroup} /> Family Friendly
         </li>
         <li>
           <FontAwesomeIcon icon={faStar} /> Top Rated

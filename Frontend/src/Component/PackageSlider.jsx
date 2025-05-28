@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-spring-3d-carousel";
 import { v4 as uuidv4 } from "uuid";
+import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
 
 const PackageSlider = () => {
   const [packageData, setPackageData] = useState([]);
@@ -34,6 +35,15 @@ const PackageSlider = () => {
       })
       .catch((error) => console.error("Error fetching data", error));
   }, []);
+
+  useEffect(() => {
+  if (packageData.length === 0) return;
+  const interval = setInterval(() => {
+    setGoToSlide((prev) => (prev + 1) % packageData.length);
+  }, 2000);
+
+  return () => clearInterval(interval);
+}, [packageData]);
   
 
   return (
@@ -45,7 +55,7 @@ const PackageSlider = () => {
             <Carousel
               slides={packageData}
               goToSlide={goToSlide}
-              offsetRadius={2}
+              offsetRadius={10}
               animationConfig={{ tension: 300, friction: 30 }}
             />
           </div>
@@ -55,15 +65,15 @@ const PackageSlider = () => {
             <button
               onClick={() => setGoToSlide((prev) => 
                 (prev - 1 + packageData.length) % packageData.length)}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition"
+              className="text-white p-3 hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 flex justify-center items-center"
             >
-              Previous
+              <FaChevronLeft/>
             </button>
             <button
               onClick={() => setGoToSlide((prev) => (prev + 1) % packageData.length)}
-              className="px-6 py-2 bg-blue-600 text-white rounded-lg shadow-lg hover:bg-blue-700 transition"
+              className="text-white p-3 hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 flex justify-center items-center"
             >
-              Next
+              <FaChevronRight/>
             </button>
           </div>
         </>
