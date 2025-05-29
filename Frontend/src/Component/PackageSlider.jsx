@@ -1,84 +1,83 @@
 import React, { useState, useEffect } from "react";
-import Carousel from "react-spring-3d-carousel";
-import { v4 as uuidv4 } from "uuid";
-import { FaChevronRight, FaChevronLeft } from "react-icons/fa";
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  Navigation,
+  Pagination,
+  Autoplay,
+  EffectCoverflow,
+} from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/autoplay";
+import "swiper/css/effect-coverflow";
+import { useNavigate } from "react-router-dom";
 
 const PackageSlider = () => {
   const [packageData, setPackageData] = useState([]);
-  const [goToSlide, setGoToSlide] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetch("http://127.0.0.1:8000/api/package")
-      .then((response) => response.json())
+      .then((res) => res.json())
       .then((data) => {
-        const formattedSlides = data.package.map((item) => ({
-          key: uuidv4(),
-          content: (
-            <div className="p-5 rounded-lg w-80 bg-gray-200 mx-4">
-              <img
-                src={`http://127.0.0.1:8000/storage/${item.image}`}
-                alt={item.title}
-                className="h-64 w-full rounded-md object-cover"
-              />
-              <h2 className="text-2xl font-bold text-black mt-4 text-center">
-                {item.title}
-              </h2>
-              <h3 className="p-5 text-center text-3xl font-bold text-black">
-                ${item.price}
-              </h3>
-              <p className="text-gray-700 mt-2 pb-5">{item.description}</p>
-            </div>
-          ),
-        }));
-        setPackageData(formattedSlides);
-        console.log("Slides loaded:", formattedSlides.length);
+        setPackageData(data.package || []);
       })
-      .catch((error) => console.error("Error fetching data", error));
+      .catch((err) => {
+        console.error("Error fetching package data:", err);
+      });
   }, []);
 
-  useEffect(() => {
-  if (packageData.length === 0) return;
-  const interval = setInterval(() => {
-    setGoToSlide((prev) => (prev + 1) % packageData.length);
-  }, 2000);
-
-  return () => clearInterval(interval);
-}, [packageData]);
-  
-
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center p-4">
+    <div className="w-full max-w-6xl mx-auto">
       {packageData.length > 0 ? (
-        <>
-          
-          <div className="relative w-full max-w-4xl h-[500px]"> 
-            <Carousel
-              slides={packageData}
-              goToSlide={goToSlide}
-              offsetRadius={10}
-              animationConfig={{ tension: 300, friction: 30 }}
-            />
-          </div>
-          
-          
-          <div className="flex gap-4 mt-8 z-10"> 
-            <button
-              onClick={() => setGoToSlide((prev) => 
-                (prev - 1 + packageData.length) % packageData.length)}
-              className="text-white p-3 hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 flex justify-center items-center"
-            >
-              <FaChevronLeft/>
-            </button>
-            <button
-              onClick={() => setGoToSlide((prev) => (prev + 1) % packageData.length)}
-              className="text-white p-3 hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500 flex justify-center items-center"
-            >
-              <FaChevronRight/>
-            </button>
-          </div>
-        </>
+        <Swiper
+          modules={[Navigation, Pagination, Autoplay, EffectCoverflow]}
+          spaceBetween={30}
+          slidesPerView={1}
+          navigation
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          loop
+          effect="coverflow"
+          coverflowEffect={{
+            rotate: 50,
+            stretch: 0,
+            depth: 100,
+            modifier: 1,
+            slideShadows: true,
+          }}
+        >
+          {packageData.map((item, index) => (
+            <SwiperSlide key={index}>
+              <div className="flex justify-center py-5">
+                <div className="w-full h-[500px] max-w-sm  shadow-sm min-h-28 cursor-pointer" onClick={()=>navigate('/package')}>
+                  <img
+                    src={`http://127.0.0.1:8000/storage/${item.image}`}
+                    alt={item.title}
+                    className="h-64 w-full object-cover"
+                  />
+
+                  <div className="p-2">
+                    <h2 className="text-2xl font-bold text-black text-center">
+                      {item.title}
+                    </h2>
+                    <h3 className="p-2 text-center text-3xl font-bold text-black">
+                      Rs. {item.price}
+                    </h3>
+                    <p className="text-gray-700 mt-2 pb-5">
+                      {item.description}
+                    </p>
+                    <button onClick={()=>navigate('/package')} className=" text-white bg-cyan-700 py-3 px-5 border-2 border-white hover:bg-white hover:text-cyan-700 hover:border-cyan-700 hover:scale-105 transition-all duration-500">
+                      Details
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       ) : (
-        <p className="text-lg">Loading packages...</p>
+        <p className="text-center text-lg text-gray-600">Loading packages...</p>
       )}
     </div>
   );

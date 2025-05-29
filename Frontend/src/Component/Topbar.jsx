@@ -3,7 +3,7 @@ import logo from "../assets/logo.png";
 
 const Topbar = () => {
   return (
-     <div className="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-center p-5 w-full bg-white shadow">
+     <div className=" flex flex-col md:flex-row items-center justify-center p-5 w-full bg-white shadow">
       <img src={logo} alt="Logo" className="md:w-44 md:h-20 w-20 h-10" />
       <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold font-primary text-slate-800">
         Aayushma River Adventure

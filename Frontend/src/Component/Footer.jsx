@@ -128,42 +128,30 @@ const Footer = () => {
 
                 <ul className="mt-8 space-y-4 text-sm">
                   <li>
-                    <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
-                      href="#"
-                    >
+                    <p className="text-gray-700 transition hover:text-gray-700/75">
                       Sunset Cruises
-                    </a>
+                    </p>
                   </li>
 
                   <li>
-                    <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
-                      href="#"
-                    >
+                    <p className="text-gray-700 transition hover:text-gray-700/75">
                       {" "}
                       Private Charter Services{" "}
-                    </a>
+                    </p>
                   </li>
 
                   <li>
-                    <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
-                      href="#"
-                    >
+                    <p className="text-gray-700 transition hover:text-gray-700/75">
                       {" "}
                       River Tours{" "}
-                    </a>
+                    </p>
                   </li>
 
                   <li>
-                    <a
-                      className="text-gray-700 transition hover:text-gray-700/75"
-                      href="#"
-                    >
+                    <p className="text-gray-700 transition hover:text-gray-700/75">
                       {" "}
                       Adventure Rides{" "}
-                    </a>
+                    </p>
                   </li>
                 </ul>
               </div>

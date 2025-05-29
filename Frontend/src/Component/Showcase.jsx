@@ -12,9 +12,9 @@ const Showcase = () => {
 
   const navigate = useNavigate();
   return (
-    <div className="grid grid-cols-3 p-10 bg-gray-100">
+    <div className="grid grid-cols-3 p-10">
       <div className="col-span-2 p-10">
-        <h1 className="text-3xl font-bold font-sans text-blue-950">
+        <h1 className="text-3xl font-bold font-sans text-slate-800">
           Aayushma River Adventure - The Narayani Experience.
         </h1>
         <p className=" text-lg pt-5 text-gray-700 font-serif">
