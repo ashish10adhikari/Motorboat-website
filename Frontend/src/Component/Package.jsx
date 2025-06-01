@@ -6,13 +6,13 @@ const Package = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="pt-6 px-5">
+    <div className="m-auto flex items-center justify-center flex-col min-h-screen">
       <div className="text-center">
         <h4 className="text-lg text-cyan-700 font-semibold uppercase">
           Our Packages
         </h4>
         <h2 className="text-4xl font-bold text-slate-800">
-          Exciting Experiences at Unmatched Prices
+          Exciting <span className="text-cyan-700 uppercase">Experiences</span> at Unmatched Prices
         </h2>
       </div>
       <div className="flex justify-center items-start">
@@ -21,7 +21,6 @@ const Package = () => {
             Ready to set sail? Browse our packages below and find the perfect
             trip for your next river adventure.
             <ul className="text-gray-600 mt-4 list-decimal list-inside">
-              <li>Handpicked routes with scenic beauty</li>
               <li>Experienced crew and guides</li>
               <li>Customizable packages for all age groups</li>
               <li>Transparent pricing — no hidden costs</li>

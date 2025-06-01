@@ -4,6 +4,7 @@ import Showcase from '../Component/Showcase'
 import WhyChooseUs from '../Component/WhyChooseUs'
 import Package from '../Component/Package'
 import Iframe from '../Component/Iframe'
+import Book from '../Component/Book'
 const Home = () => {
   return (
     <>
@@ -11,6 +12,7 @@ const Home = () => {
     <Showcase/>
     <Package/>
     <WhyChooseUs/>
+    <Book/>
     <Iframe/>
     </>
   )
