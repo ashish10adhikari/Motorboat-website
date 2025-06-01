@@ -5,13 +5,16 @@ import WhyChooseUs from '../Component/WhyChooseUs'
 import Package from '../Component/Package'
 import Iframe from '../Component/Iframe'
 import Book from '../Component/Book'
+import Imagebreaker from '../Component/Imagebreaker'
 const Home = () => {
   return (
     <>
     <Hero/>
     <Showcase/>
-    <Package/>
     <WhyChooseUs/>
+    <Imagebreaker/>
+    <Package/>
+    
     <Book/>
     <Iframe/>
     </>

@@ -2,6 +2,7 @@ import React from "react";
 import hero from "../assets/bg.jpg";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
+import herobg from '../assets/herobg.png';
 
 const Hero = () => {
 
@@ -9,7 +10,7 @@ const Hero = () => {
   return (
     <div
       style={{ backgroundImage: `url(${hero})` }}
-      className="bg-cover bg-center h-[75vh] flex flex-col items-center justify-center text-white font-bold"
+      className="bg-cover bg-center h-[75vh] flex flex-col items-center justify-center text-white font-bold relative"
     >
       <div className="text-center top-50 left-40">
         <h2 className="text-2xl">WELCOME TO</h2>
@@ -23,6 +24,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
+      <img src={herobg} alt="" className="absolute bottom-[-25px]"/>
     </div>
   );
 };

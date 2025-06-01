@@ -1,13 +1,33 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import Topbar from "./Topbar";
+import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Initial check on mount
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <>
-      <Topbar/>
+      <Topbar />
 
-      <div className=" w-full bg-slate-800 text-white text-center py-2 sticky top-0 z-50">
+      <div
+        className={`w-full text-white text-center py-2 sticky top-0 z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-slate-800/70 backdrop-blur-md shadow-md border-b border-slate-600/30"
+            : " bg-slate-800 " 
+        }`}
+      >
         <ul className="flex justify-center gap-2 h-12 items-center">
           <span className="border-1 h-6"></span>
           <NavLink
