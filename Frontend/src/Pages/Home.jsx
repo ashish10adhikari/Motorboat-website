@@ -6,14 +6,17 @@ import Package from '../Component/Package'
 import Iframe from '../Component/Iframe'
 import Book from '../Component/Book'
 import Imagebreaker from '../Component/Imagebreaker'
+import FeaturedPicnic from '../Component/picnicpackage'
 const Home = () => {
   return (
     <>
     <Hero/>
     <Showcase/>
+    
+    <FeaturedPicnic/>
     <WhyChooseUs/>
-    <Imagebreaker/>
     <Package/>
+    <Imagebreaker/>
     
     <Book/>
     <Iframe/>

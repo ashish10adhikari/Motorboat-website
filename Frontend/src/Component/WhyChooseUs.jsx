@@ -7,8 +7,8 @@ import { IoBoatOutline } from "react-icons/io5";
 
 const WhyChooseUs = () => {
   return (
-    <div className=" py-4 px-5 mt-5">
-      <div className="text-center mb-8">
+    <div className=" pt-4 px-5 mt-5">
+      <div className="text-center">
         <h4 className="text-lg text-cyan-700 font-semibold uppercase">
           Why Choose Us
         </h4>

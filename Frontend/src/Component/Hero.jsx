@@ -24,7 +24,7 @@ const Hero = () => {
           </button>
         </div>
       </div>
-      <img src={herobg} alt="" className="absolute bottom-[-25px]"/>
+      <img src={herobg} alt="" className="absolute bottom-0"/>
     </div>
   );
 };

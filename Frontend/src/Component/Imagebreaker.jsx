@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/hero.jpg';
+import image from '../assets/exp2.jpg';
 
 const Imagebreaker = () => {
   return (
