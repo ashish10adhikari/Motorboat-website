@@ -58,10 +58,10 @@ const Showcase = () => {
         </p>
       </div>
       <div className=" mx-28 px-20 pt-5 flex justify-center items-center gap-5">
-        <img src={exp1} alt="" className="w-1/4 h-[500px] object-cover"/>
-        <img src={exp2} alt="" className="w-1/4 h-[500px] object-cover"/>
-        <img src={exp3} alt="" className="w-1/4 h-[500px] object-cover"/>
-        <img src={exp4} alt="" className="w-1/4 h-[500px] object-cover"/>
+        <img src={exp1} alt="" className="w-1/4 h-[600px] object-cover"/>
+        <img src={exp2} alt="" className="w-1/4 h-[600px] object-cover"/>
+        <img src={exp3} alt="" className="w-1/4 h-[600px] object-cover"/>
+        <img src={exp4} alt="" className="w-1/4 h-[600px] object-cover"/>
       </div>
 
     </div>

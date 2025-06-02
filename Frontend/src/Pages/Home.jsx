@@ -7,6 +7,7 @@ import Iframe from '../Component/Iframe'
 import Book from '../Component/Book'
 import Imagebreaker from '../Component/Imagebreaker'
 import FeaturedPicnic from '../Component/picnicpackage'
+import HowitWorks from '../Component/HowitWorks'
 const Home = () => {
   return (
     <>
@@ -16,6 +17,7 @@ const Home = () => {
     <FeaturedPicnic/>
     <WhyChooseUs/>
     <Package/>
+    <HowitWorks/>
     <Imagebreaker/>
     
     <Book/>
